@@ -1,0 +1,15 @@
+service: serverless-express-post
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-south-1
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: POST /submit
+
+plugins:
+  - serverless-offline
